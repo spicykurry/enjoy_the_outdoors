@@ -1,23 +1,33 @@
 
-let theSimpleButton = document.querySelector("#simpleButton")
-let theSampleUL = document.querySelector("#locations")
-let theParksUL = document.querySelector("#parks")
+let filterParkLocation = document.querySelector("#filterByParkLocation")
+let filterParkType = document.querySelector("#filterByParkType")
+let filterViewAll = document.querySelector("#viewAllParks")
+let stateList = document.querySelector("#stateListDropdown")
+let typeList = document.querySelector("#parkTypeListDropdown")
+let theLocationsUL = document.querySelector("#locations")
+let types = document.querySelector("#types")
 
-theSimpleButton.addEventListener("click", function(event){
-    console.log(locationsArray)
-    console.log(nationalParksArray)
-    console.log(parkTypesArray)
-
+// This is listening for the user to select "filter by location"
+// and populates the state/location dropdown list
+filterParkLocation.addEventListener("click", function (event) {
     locationsArray.forEach((location) => {
-        theSampleUL.innerHTML += `<li>${location}</li>`
+        theLocationsUL.innerHTML += `<li>${location}</li>`
     });
+    
+    stateList.classList.remove("d-none")
+})
 
-nationalParksArray.forEach((park) => {
-    theParksUL.innerHTML += `<li>${park.locationName}</li>`
-});
+// This is listening for the user to select "filter by type"
+// and populates the type dropdown list
+filterParkType.addEventListener("click", function () {
+    parkTypesArray.forEach((type)=>{
+        types.innerHTML += `<li>${type}</li>`
+    })
+    typeList.classList.remove("d-none")
 
-    theSampleUL.classList.remove("d-none")
+})
 
-    theParksUL.classList.remove("d-none")
+filterViewAll.addEventListener("click", function () {
+
 
 })
