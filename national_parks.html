@@ -43,7 +43,7 @@
         </div>
     </nav>
 
-    <img src="assets/images/mt-rainier-paradise-1.jfif" class="img-fluid" alt="picture of mt rainier">
+    <img id="mainImage" src="assets/images/mt-rainier-paradise-1.jfif" class="img-fluid" alt="picture of mt rainier">
 
 
     <h1>Explore the National Parks</h1>
@@ -54,18 +54,14 @@
         <option value="location" id="filterByParkLocation">Park Location</option>
         <option value="type" id="filterByParkType">Park Type</option>
     </select>
-    <br>
+
     <!-- This select box comes up when the user wants to filter by state/location -->
 
-    <select class="form-select d-none" aria-label="Default select example" id="stateListDropdown">
-    </select>
+    <select class="form-select d-none" aria-label="Default select example" id="stateListDropdown"></select>
 
-
-    <br>
     <!-- This select box comes up when the user wants to filter by park type -->
 
-    <select class="form-select d-none" aria-label="Default select example" id="parkTypesListDropdown">
-    </select>
+    <select class="form-select d-none" aria-label="Default select example" id="parkTypesListDropdown"></select>
 
 
     <!-- Cards will display based on location or type selected -->
