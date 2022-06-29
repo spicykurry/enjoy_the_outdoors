@@ -43,6 +43,9 @@
         </div>
     </nav>
 
+    <img src="assets/images/mt-rainier-paradise-1.jfif" class="img-fluid" alt="picture of mt rainier">
+
+
     <h1>Explore the National Parks</h1>
     <!-- This select box is for the user to select how to filter the search -->
 
@@ -50,20 +53,28 @@
         <option selected>Filter By</option>
         <option value="location" id="filterByParkLocation">Park Location</option>
         <option value="type" id="filterByParkType">Park Type</option>
-      </select>
+    </select>
     <br>
     <!-- This select box comes up when the user wants to filter by state/location -->
-   
+
     <select class="form-select d-none" aria-label="Default select example" id="stateListDropdown">
-      </select>
+    </select>
 
 
     <br>
     <!-- This select box comes up when the user wants to filter by park type -->
-    
+
     <select class="form-select d-none" aria-label="Default select example" id="parkTypesListDropdown">
-      </select>
-    
+    </select>
+
+
+    <!-- Cards will display based on location or type selected -->
+
+
+    <div id="resultCardsDiv" class="row row-cols-1 row-cols-md-2 g-4 d-none">
+
+    </div>
+
 
 
     <!-- Bootstrap Bundle with Popper -->

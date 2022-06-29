@@ -15,11 +15,15 @@ let locationsDDL = document.querySelector("#stateListDropdown")
 //get the types dropdown so we can work with it
 let typesDDL = document.querySelector("#parkTypesListDropdown")
 
+// get the cards div into JS for us to work with
+let resultsCardDiv = document.querySelector("#resultCardsDiv")
+
 
 //hide all the dropdowns and then check which is supposed to show below
 searchTypeDDL.addEventListener("change", function (event) {
     locationsDDL.classList.add("d-none");
     typesDDL.classList.add("d-none");
+    resultsCardDiv.classList.add("d-none")
 
     if (event.target.value === "location") {
         generateLocationsDDLOptions()
@@ -54,32 +58,51 @@ function generateTypesDDLOptions() {
 // When user selects a state in the dropdown, this code is executed
 locationsDDL.addEventListener("change", function (event) {
 
-    let locationSelection = nationalParksArray.filter(nationalPark => nationalPark.State === event.target.value);
-    console.log(locationSelection)
-
-
     let filteredLocationArray = nationalParksArray.filter((parks) => {
-        return parks.State === locationSelection
+        return parks.State === event.target.value
     })
-    console.log(filteredLocationArray)
 
-    // then call a function that creates a card or table row for each item in the array
+    generateCards(filteredLocationArray)
+    resultsCardDiv.classList.remove("d-none")
 
 })
 
 // When user selects a park type in the dropdown, this code is executed
 typesDDL.addEventListener("change", function (event) {
 
-    let typeSelection = parkTypesArray.filter(parkType => parkType === event.target.value);
-    console.log(typeSelection)
-
     let filteredTypeArray = nationalParksArray.filter((parks) => {
-        //return if object.locationName contains typeSelection
-        // need to make both all lower or all upper case
-        return parks.locationName.includes(typeSelection)
+        return parks.LocationName.toLowerCase().includes(event.target.value.toLowerCase())
     })
-    console.log(filteredTypeArray)
+
+    generateCards(filteredTypeArray)
+    resultsCardDiv.classList.remove("d-none")
 })
+
+// function that creates a card for each item in the array
+
+function generateCards(someArray) {
+    resultsCardDiv.innerHTML = ""
+
+    someArray.forEach((park) => {
+        let card = ""
+        card += `<div class="col">`
+        card += `<div class="card">`
+        card += `   <div class="card-body">`
+        card += `       <h5 class="card-title">${park.LocationName}</h5>`
+        card += `       <p class="card-text">${park.Address}</p>`
+        card += `       <p class="card-text">${park.City}, ${park.State} ${park.ZipCode}</p>`
+        card += `   </div>`
+        card += `</div>`
+        card += `</div>`
+
+
+        resultsCardDiv.innerHTML += card
+
+    })
+}
+
+
+
 
 
 
