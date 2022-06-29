@@ -51,17 +51,34 @@ function generateTypesDDLOptions() {
         typesDDL.innerHTML += `<option value="${type}">${type}</option>`
     })
 }
-
+// When user selects a state in the dropdown, this code is executed
 locationsDDL.addEventListener("change", function (event) {
 
     let locationSelection = nationalParksArray.filter(nationalPark => nationalPark.State === event.target.value);
     console.log(locationSelection)
+
+
+    let filteredLocationArray = nationalParksArray.filter((parks) => {
+        return parks.State === locationSelection
+    })
+    console.log(filteredLocationArray)
+
+    // then call a function that creates a card or table row for each item in the array
+
 })
 
-typesDDL.addEventListener("change", function (event){
+// When user selects a park type in the dropdown, this code is executed
+typesDDL.addEventListener("change", function (event) {
 
     let typeSelection = parkTypesArray.filter(parkType => parkType === event.target.value);
     console.log(typeSelection)
+
+    let filteredTypeArray = nationalParksArray.filter((parks) => {
+        //return if object.locationName contains typeSelection
+        // need to make both all lower or all upper case
+        return parks.locationName.includes(typeSelection)
+    })
+    console.log(filteredTypeArray)
 })
 
 
