@@ -10,6 +10,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
+    margin-top: 20px;
   }
   #mainImage {
     display: block;
@@ -21,7 +22,7 @@
   }
 
   #resultCardsDiv{
-    margin: 0 10px 0 10px;
+    margin: 0 10px 10px 10px;
   }
 
   #stateListDropdown{

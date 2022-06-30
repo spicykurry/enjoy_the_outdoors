@@ -62,7 +62,7 @@ locationsDDL.addEventListener("change", function (event) {
         return parks.State === event.target.value
     })
 
-    generateCards(filteredLocationArray)
+    generateParkCards(filteredLocationArray)
     resultsCardDiv.classList.remove("d-none")
 
 })
@@ -74,13 +74,13 @@ typesDDL.addEventListener("change", function (event) {
         return parks.LocationName.toLowerCase().includes(event.target.value.toLowerCase())
     })
 
-    generateCards(filteredTypeArray)
+    generateParkCards(filteredTypeArray)
     resultsCardDiv.classList.remove("d-none")
 })
 
 // function that creates a card for each item in the array
 
-function generateCards(someArray) {
+function generateParkCards(someArray) {
     resultsCardDiv.innerHTML = ""
 
     someArray.forEach((park) => {
