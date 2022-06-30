@@ -15,6 +15,9 @@ let locationsDDL = document.querySelector("#stateListDropdown")
 //get the types dropdown so we can work with it
 let typesDDL = document.querySelector("#parkTypesListDropdown")
 
+// get the view all dropdown option so we can work with it
+let viewAllParks = document.querySelector("#viewAllParks")
+
 // get the cards div into JS for us to work with
 let resultsCardDiv = document.querySelector("#resultCardsDiv")
 
@@ -35,6 +38,11 @@ searchTypeDDL.addEventListener("change", function (event) {
         generateTypesDDLOptions()
         typesDDL.classList.remove("d-none")
         locationsDDL.classList.add("d-none")
+    }
+    if (event.target.value ==="all"){
+        // call the funciton that makes all parks into cards and hide the other 2 dropdowns and show the cards
+        generateParkCards(nationalParksArray)
+        resultsCardDiv.classList.remove("d-none")
     }
 })
 
