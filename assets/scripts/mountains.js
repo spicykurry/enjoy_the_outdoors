@@ -24,7 +24,7 @@ function generateMountainCard(mountain) {
     card += `<div class="card-body">`
     card += `     <h5 class="card-title">${mountain.name}</h5>`
     card += `     <p class="card-text">${mountain.desc}</p>`
-    card += `     <p class="card-text">Elevation: ${mountain.elevation}feet</p>`
+    card += `     <p class="card-text">Elevation: ${mountain.elevation} feet</p>`
     card += `</div>`
 
 

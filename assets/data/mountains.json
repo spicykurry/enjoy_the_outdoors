@@ -1,5 +1,15 @@
 {
     "mountains": [{
+        "name": "Mt. Rainier",
+        "elevation": 14411,
+        "effort": "Strenuous",
+        "img": "rainier.jpg",
+        "desc": "Mt. Rainier is an active volcano and is the most glaciated peak in the Lower 48. Much of the mountain is inaccessible to the public except for by a 93 mile trail that circumnavigates the perimeter.",
+        "coords": {
+            "lat": 44.270403,
+            "lng": -71.303501
+        }
+    },{
         "name": "Mt. Washington",
         "elevation": 6288,
         "effort": "Strenuous",
