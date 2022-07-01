@@ -39,7 +39,7 @@ searchTypeDDL.addEventListener("change", function (event) {
         typesDDL.classList.remove("d-none")
         locationsDDL.classList.add("d-none")
     }
-    if (event.target.value ==="all"){
+    if (event.target.value === "all") {
         // call the funciton that makes all parks into cards and hide the other 2 dropdowns and show the cards
         generateParkCards(nationalParksArray)
         resultsCardDiv.classList.remove("d-none")
@@ -99,11 +99,14 @@ function generateParkCards(someArray) {
         card += `       <h5 class="card-title">${park.LocationName}</h5>`
         card += `       <p class="card-text">${park.Address}</p>`
         card += `       <p class="card-text">${park.City}, ${park.State} ${park.ZipCode}</p>`
+        if (park.Visit !== undefined) {
+            card += `       <a href="${park.Visit}" target = "_blank" class="card-link">Find Out More!</a>`
+        }
         card += `   </div>`
         card += `</div>`
         card += `</div>`
 
-
+        
         resultsCardDiv.innerHTML += card
 
     })
